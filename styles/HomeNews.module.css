@@ -1,0 +1,30 @@
+.newsBox {
+  background: var(--box-color);
+  padding: 1rem;
+  border-radius: 10px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 0.5rem;
+  margin: 1rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.newsBox:hover {
+  background: var(--box-hover-color);
+}
+
+.newsBox:hover .top h3 {
+  color: var(--text-color);
+}
+
+.newsBox .top h3 {
+  color: var(--main-color);
+}
+
+.newsBox .bottom {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+  width: fit-content;
+}

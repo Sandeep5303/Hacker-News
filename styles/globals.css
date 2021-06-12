@@ -1,9 +1,24 @@
-html,
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+  --bg-color: #1a1b1c;
+  --main-color: #4cf45d;
+  --sub-color: #939eae;
+  --text-color: #e9ecf0;
+  --box-color: rgba(0, 0, 0, 0.15);
+  --box-hover-color: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-color);
+  overflow: hidden;
 }
 
 a {
@@ -11,6 +26,32 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+small {
+  color: var(--sub-color);
+}
+
+small span {
+  color: var(--main-color);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--text-color);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--sub-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color);
 }

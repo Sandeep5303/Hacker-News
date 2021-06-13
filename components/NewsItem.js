@@ -36,7 +36,7 @@ export default function NewsItem({ nw }) {
         {nw.children.length !== 0 && (
           <div className={styles.commentsContainer}>
             {nw.children.map(cmt => (
-              <Comments cmt={cmt} />
+              <Comments cmt={cmt} key={cmt.id} />
             ))}
           </div>
         )}

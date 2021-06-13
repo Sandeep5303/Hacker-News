@@ -41,11 +41,12 @@
 }
 
 .commentsContainer {
+  width: auto;
   background: var(--box-color);
-  padding: 1rem;
+  padding: 0 1rem;
   border-radius: 10px;
-  display: grid;
-  grid-auto-flow: row;
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
   margin: 1rem 1rem;
   transition: all 0.2s ease-in-out;

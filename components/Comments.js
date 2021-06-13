@@ -9,7 +9,7 @@ export default function Comments({ cmt }) {
         <small>{cmt.created_at}</small>
       </div>
       <div className={styles.cmtBottom}>
-        <p>{parseHTML(cmt.text)}</p>
+        {cmt.text && <p>{parseHTML(cmt.text)}</p>}
       </div>
     </div>
   );

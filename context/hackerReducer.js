@@ -1,6 +1,6 @@
-import { SET_SHOW_MODAL } from '@context/index';
+import { ADD_SEARCH_RESULTS, SET_SHOW_MODAL, SET_TERM } from '@context/index';
 
-export default (state, action) => {
+const Reducer = (state, action) => {
   switch (action.type) {
     case SET_SHOW_MODAL: {
       return {
@@ -8,7 +8,21 @@ export default (state, action) => {
         showModal: action.payload,
       };
     }
+    case SET_TERM: {
+      return {
+        ...state,
+        term: action.payload,
+      };
+    }
+    case ADD_SEARCH_RESULTS: {
+      return {
+        ...state,
+        searchResults: action.payload,
+      };
+    }
     default:
       return state;
   }
 };
+
+export default Reducer;

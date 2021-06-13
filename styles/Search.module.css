@@ -66,16 +66,16 @@
   background: var(--box-hover-color);
 }
 
-.newsBox:hover .bottom h3 {
+.newsBox:hover .top h3 {
   color: var(--text-color);
 }
 
-.newsBox .bottom h3 {
+.newsBox .top h3 {
   color: var(--main-color);
 }
 
 .newsBox .bottom {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }

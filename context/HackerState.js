@@ -10,6 +10,7 @@ import {
   SET_TERM,
   SET_LOADING,
   SET_SEARCH_LOADING,
+  RESET_ARRAY,
 } from '@context/index';
 
 const HackerState = props => {
@@ -34,6 +35,7 @@ const HackerState = props => {
 
   // add current news
   const addCurrentNews = async id => {
+    resetCurrent();
     setLoading();
     const res = await fetch(`${API_URL}/items/${id}`);
     const news = await res.json();
@@ -73,6 +75,13 @@ const HackerState = props => {
   const setSearchLoading = () => {
     dispatch({
       type: SET_SEARCH_LOADING,
+    });
+  };
+
+  // reset current array to null
+  const resetCurrent = () => {
+    dispatch({
+      type: RESET_ARRAY,
     });
   };
 

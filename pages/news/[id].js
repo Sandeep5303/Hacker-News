@@ -4,10 +4,10 @@ import hackerContext from '@context/hackerContext';
 import { useEffect, useContext } from 'react';
 
 export default function index({ id }) {
-  const { currentNews, addCurrentNews } = useContext(hackerContext);
+  const { addCurrentNews } = useContext(hackerContext);
   useEffect(() => {
     addCurrentNews(id);
-  }, []);
+  }, [id]);
   return (
     <div>
       <NewsItem />

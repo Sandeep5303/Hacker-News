@@ -5,6 +5,7 @@ import {
   SET_TERM,
   SET_LOADING,
   SET_SEARCH_LOADING,
+  RESET_ARRAY,
 } from '@context/index';
 
 const Reducer = (state, action) => {
@@ -45,6 +46,12 @@ const Reducer = (state, action) => {
         ...state,
         currentNews: action.payload,
         loading: false,
+      };
+    }
+    case RESET_ARRAY: {
+      return {
+        ...state,
+        currentNews: null,
       };
     }
     default:

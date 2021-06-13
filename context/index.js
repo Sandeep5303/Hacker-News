@@ -1,5 +1,6 @@
 export const SET_SHOW_MODAL = 'SET_SHOW_MODAL';
 export const SET_TERM = 'SET_TERM';
 export const SET_LOADING = 'SET_LOADING';
+export const SET_SEARCH_LOADING = 'SET_SEARCH_LOADING';
 export const ADD_SEARCH_RESULTS = 'ADD_SEARCH_RESULTS';
 export const ADD_CURRENT_NEWS = 'ADD_CURRENT_NEWS';

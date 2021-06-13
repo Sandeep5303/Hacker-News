@@ -8,7 +8,7 @@ import Loader from '@components/Loader';
 
 export default function Search() {
   const {
-    loading,
+    sloading,
     term,
     setShowModal,
     searchResults,
@@ -35,7 +35,7 @@ export default function Search() {
           <FaTimes size='2rem' />
         </div>
       </div>
-      {loading && <Loader />}
+      {sloading && <Loader />}
       <div className={styles.newsContainer}>
         {searchResults.map(result => (
           <Link href={`/news/${result.objectID}`}>

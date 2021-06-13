@@ -4,6 +4,7 @@ import {
   SET_SHOW_MODAL,
   SET_TERM,
   SET_LOADING,
+  SET_SEARCH_LOADING,
 } from '@context/index';
 
 const Reducer = (state, action) => {
@@ -26,11 +27,17 @@ const Reducer = (state, action) => {
         loading: true,
       };
     }
+    case SET_SEARCH_LOADING: {
+      return {
+        ...state,
+        sloading: true,
+      };
+    }
     case ADD_SEARCH_RESULTS: {
       return {
         ...state,
         searchResults: action.payload,
-        loading: false,
+        sloading: false,
       };
     }
     case ADD_CURRENT_NEWS: {

@@ -9,6 +9,7 @@ import {
   SET_SHOW_MODAL,
   SET_TERM,
   SET_LOADING,
+  SET_SEARCH_LOADING,
 } from '@context/index';
 
 const HackerState = props => {
@@ -18,6 +19,7 @@ const HackerState = props => {
     searchResults: [],
     term: '',
     loading: false,
+    sLoading: false,
   };
 
   const [state, dispatch] = useReducer(HackerReducer, initialState);
@@ -43,7 +45,7 @@ const HackerState = props => {
 
   // add search results
   const addSearchResults = async term => {
-    setLoading();
+    setSearchLoading();
     const res = await fetch(`${API_URL}/search?query=${term}&tags=story`);
     const data = await res.json();
     dispatch({
@@ -67,6 +69,13 @@ const HackerState = props => {
     });
   };
 
+  // set search loading
+  const setSearchLoading = () => {
+    dispatch({
+      type: SET_SEARCH_LOADING,
+    });
+  };
+
   return (
     <HackerContext.Provider
       value={{
@@ -75,6 +84,7 @@ const HackerState = props => {
         currentNews: state.currentNews,
         term: state.term,
         loading: state.loading,
+        sloading: state.sloading,
         setShowModal,
         setTerm,
         addSearchResults,

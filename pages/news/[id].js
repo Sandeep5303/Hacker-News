@@ -4,7 +4,7 @@ import hackerContext from '@context/hackerContext';
 import { useEffect, useContext } from 'react';
 
 export default function index({ id }) {
-  const { addCurrentNews } = useContext(hackerContext);
+  const { currentNews, addCurrentNews } = useContext(hackerContext);
   useEffect(() => {
     addCurrentNews(id);
   }, []);

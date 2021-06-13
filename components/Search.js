@@ -4,10 +4,17 @@ import Link from 'next/link';
 
 import styles from '@styles/Search.module.css';
 import hackerContext from '@context/hackerContext';
+import Loader from '@components/Loader';
 
 export default function Search() {
-  const { term, setShowModal, searchResults, setTerm, addSearchResults } =
-    useContext(hackerContext);
+  const {
+    loading,
+    term,
+    setShowModal,
+    searchResults,
+    setTerm,
+    addSearchResults,
+  } = useContext(hackerContext);
 
   useEffect(() => {
     addSearchResults(term);
@@ -28,6 +35,7 @@ export default function Search() {
           <FaTimes size='2rem' />
         </div>
       </div>
+      {loading && <Loader />}
       <div className={styles.newsContainer}>
         {searchResults.map(result => (
           <Link href={`/news/${result.objectID}`}>

@@ -1,21 +1,24 @@
 import NewsItem from '@components/NewsItem';
-import { API_URL } from '@config/index';
+import hackerContext from '@context/hackerContext';
 
-export default function index({ nw }) {
+import { useEffect, useContext } from 'react';
+
+export default function index({ id }) {
+  const { addCurrentNews } = useContext(hackerContext);
+  useEffect(() => {
+    addCurrentNews(id);
+  }, []);
   return (
     <div>
-      <NewsItem nw={nw} />
+      <NewsItem />
     </div>
   );
 }
 
 export async function getServerSideProps({ query: { id } }) {
-  const res = await fetch(`${API_URL}/items/${id}`);
-  const news = await res.json();
-
   return {
     props: {
-      nw: news,
+      id,
     },
   };
 }

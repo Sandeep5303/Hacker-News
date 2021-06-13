@@ -47,7 +47,7 @@
   border-radius: 10px;
   height: auto;
   max-height: calc(100vh - 40vh);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .newsBox {

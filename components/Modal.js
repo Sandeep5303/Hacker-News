@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import styles from '@styles/Modal.module.css';
 import Search from '@components/Search';
 
-export default function Modal({ showModal, setShowModal }) {
+export default function Modal({ showModal }) {
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },

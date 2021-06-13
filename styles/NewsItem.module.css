@@ -1,5 +1,5 @@
 .newsItemContainer {
-  height: calc(100vh - 20vh);
+  height: calc(100vh - 25vh);
   display: flex;
   flex-direction: column;
 }
@@ -12,20 +12,11 @@
   grid-auto-flow: row;
   gap: 0.5rem;
   margin: 1rem 1rem;
-  cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 
 .newsBox p {
   padding: 1rem 0;
-  color: var(--text-color);
-}
-
-.newsBox:hover {
-  background: var(--box-hover-color);
-}
-
-.newsBox:hover .top h3 {
   color: var(--text-color);
 }
 
@@ -40,6 +31,15 @@
   width: fit-content;
 }
 
+.newsBox .bottom .link {
+  align-self: center;
+  cursor: pointer;
+}
+
+.newsBox .bottom .link:hover {
+  color: var(--main-color);
+}
+
 .commentsContainer {
   background: var(--box-color);
   padding: 1rem;
@@ -49,5 +49,5 @@
   gap: 0.5rem;
   margin: 1rem 1rem;
   transition: all 0.2s ease-in-out;
-  overflow-y: scroll;
+  overflow-y: auto;
 }

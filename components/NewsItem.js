@@ -1,12 +1,12 @@
 import Layout from '@components/Layout';
 import Comments from '@components/Comments';
 import styles from '@styles/NewsItem.module.css';
+import { parseHTML } from '@config/helper';
+
+import { FaLink } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function NewsItem({ nw }) {
-  // convert html string into text
-  const parseHTML = text => {
-    return text.replace(/(<([^>]+)>)/g, '');
-  };
   return (
     <Layout>
       <div className={styles.newsItemContainer}>
@@ -22,15 +22,25 @@ export default function NewsItem({ nw }) {
             <small>
               🤍 <span>{nw.points}</span>
             </small>
+            {nw.url && (
+              <Link href={nw.url}>
+                <a target='_blank'>
+                  <small className={styles.link}>
+                    <FaLink />
+                  </small>
+                </a>
+              </Link>
+            )}
           </div>
         </div>
-        <div className={styles.commentsContainer}>
-          {nw.children.length !== 0 &&
-            nw.children.map(cmt => <Comments cmt={cmt} />)}
-        </div>
+        {nw.children.length !== 0 && (
+          <div className={styles.commentsContainer}>
+            {nw.children.map(cmt => (
+              <Comments cmt={cmt} />
+            ))}
+          </div>
+        )}
       </div>
     </Layout>
   );
 }
-
-// make comment box

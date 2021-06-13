@@ -1,3 +1,9 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
 .comments .cmtTop {
   display: flex;
   gap: 1rem;

@@ -1,4 +1,4 @@
 .newsContainer {
   height: calc(100vh - 30vh);
-  overflow-y: scroll;
+  overflow-y: auto;
 }

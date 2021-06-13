@@ -16,10 +16,10 @@ export default function Home({ news }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`${API_URL}/api`);
+  const res = await fetch(`${API_URL}/search_by_date?tags=story`);
   const news = await res.json();
 
   return {
-    props: { news },
+    props: { news: news.hits },
   };
 }

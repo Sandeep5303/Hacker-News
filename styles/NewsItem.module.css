@@ -6,11 +6,12 @@
 
 .newsBox {
   background: var(--box-color);
-  min-height: 100px;
+  min-height: 105px;
   padding: 1rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   gap: 0.5rem;
   margin: 1rem;
   transition: all 0.2s ease-in-out;

@@ -2,7 +2,7 @@ import Layout from '@components/Layout';
 import Comments from '@components/Comments';
 import Loader from '@components/Loader';
 import styles from '@styles/NewsItem.module.css';
-import { parseHTML } from '@config/helper';
+import { parseHTML, formatDate } from '@config/helper';
 import hackerContext from '@context/hackerContext';
 
 import { FaLink } from 'react-icons/fa';
@@ -23,7 +23,7 @@ export default function NewsItem() {
               {currentNews.text && <p>{parseHTML(currentNews.text)}</p>}
             </div>
             <div className={styles.bottom}>
-              <small>{currentNews.created_at}</small>
+              <small>{formatDate(currentNews.created_at)}</small>
               <small>{currentNews.children.length} comments</small>
               <small>
                 🤍 <span>{currentNews.points}</span>
@@ -41,7 +41,7 @@ export default function NewsItem() {
           </div>
           {currentNews.children.length !== 0 && (
             <div className={styles.commentsContainer}>
-              {currentNews.children.slice(0, 20).map(cmt => (
+              {currentNews.children.map(cmt => (
                 <Comments cmt={cmt} key={cmt.id} />
               ))}
             </div>

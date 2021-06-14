@@ -5,6 +5,7 @@ import Link from 'next/link';
 import styles from '@styles/Search.module.css';
 import hackerContext from '@context/hackerContext';
 import Loader from '@components/Loader';
+import { formatDate } from '@config/helper';
 
 export default function Search() {
   const {
@@ -38,14 +39,14 @@ export default function Search() {
       {sloading && <Loader />}
       <div className={styles.newsContainer}>
         {searchResults.map(result => (
-          <Link href={`/news/${result.objectID}`}>
+          <Link href={`/news/${result.objectID}`} key={result.objectID}>
             <div className={styles.newsBox} onClick={() => setShowModal()}>
               <div className={styles.top}>
                 <h3>{result.title}</h3>
               </div>
               <div className={styles.bottom}>
                 <small>{result.author}</small>
-                <small>{result.created_at}</small>
+                <small>{formatDate(result.created_at)}</small>
                 <small>{result.num_comments} comments</small>
                 <small>
                   🤍 <span>{result.points}</span>

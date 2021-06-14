@@ -22,7 +22,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--main-color);
   text-decoration: none;
 }
 

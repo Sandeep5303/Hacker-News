@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 
 import { API_URL } from 'config/index';
+import { customToast } from 'config/helper';
 import HackerContext from '@context/hackerContext';
 import HackerReducer from '@context/hackerReducer';
 import {
@@ -35,25 +36,46 @@ const HackerState = props => {
 
   // add current news
   const addCurrentNews = async id => {
-    resetCurrent();
-    setLoading();
-    const res = await fetch(`${API_URL}/items/${id}`);
-    const news = await res.json();
-    dispatch({
-      type: ADD_CURRENT_NEWS,
-      payload: news,
-    });
+    try {
+      resetCurrent();
+      setLoading();
+      const res = await fetch(`${API_URL}/items/${id}`);
+      const news = await res.json();
+      customToast('success', 'Story successfully loaded');
+
+      const filter = {
+        id: news.id,
+        created_at: news.created_at,
+        type: news.type,
+        author: news.author,
+        title: news.title,
+        url: news.url,
+        text: news.text,
+        points: news.points,
+        children: [...news.children.slice(0, 20)],
+      };
+      dispatch({
+        type: ADD_CURRENT_NEWS,
+        payload: filter,
+      });
+    } catch (err) {
+      customToast('error', err.response.msg);
+    }
   };
 
   // add search results
   const addSearchResults = async term => {
-    setSearchLoading();
-    const res = await fetch(`${API_URL}/search?query=${term}&tags=story`);
-    const data = await res.json();
-    dispatch({
-      type: ADD_SEARCH_RESULTS,
-      payload: data.hits,
-    });
+    try {
+      setSearchLoading();
+      const res = await fetch(`${API_URL}/search?query=${term}&tags=story`);
+      const data = await res.json();
+      dispatch({
+        type: ADD_SEARCH_RESULTS,
+        payload: data.hits,
+      });
+    } catch (err) {
+      customToast('error', err.response.msg);
+    }
   };
 
   // set term

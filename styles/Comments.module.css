@@ -6,6 +6,10 @@
   border-bottom: 1px solid var(--sub-color);
 }
 
+.comments:last-of-type {
+  border: none;
+}
+
 .comments .cmtTop {
   display: flex;
   gap: 1rem;

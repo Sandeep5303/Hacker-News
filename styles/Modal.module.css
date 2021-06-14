@@ -14,7 +14,7 @@
   padding: 0 30px;
 }
 
-@media (max-height: 582px) {
+@media only screen and (max-height: 582px) {
   .modal {
     margin: calc(60px + 50px) auto;
   }

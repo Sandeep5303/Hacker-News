@@ -2,23 +2,28 @@ import Layout from '@components/Layout';
 import Comments from '@components/Comments';
 import Loader from '@components/Loader';
 import styles from '@styles/NewsItem.module.css';
-import { parseHTML, formatDate } from '@config/helper';
+import { formatDate } from '@config/helper';
+import { animationItems } from '@config/animation';
 import hackerContext from '@context/hackerContext';
 
 import { FaLink } from 'react-icons/fa';
 import Link from 'next/link';
-import { useContext } from 'react';
+import { useContext, useRef, useEffect } from 'react';
 
 export default function NewsItem() {
   const createMarkup = () => {
     return { __html: `${currentNews.text}` };
   };
   const { loading, currentNews } = useContext(hackerContext);
+  const newsItemRef = useRef(null);
+  useEffect(() => {
+    animationItems(newsItemRef);
+  });
   return (
     <Layout>
       {loading && <Loader />}
       {currentNews && (
-        <div className={styles.newsItemContainer}>
+        <div ref={newsItemRef} className={styles.newsItemContainer}>
           <div className={styles.newsBox}>
             <div className={styles.top}>
               <h3>{currentNews.title}</h3>

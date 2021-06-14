@@ -4,7 +4,7 @@
   padding: 0 30px;
 }
 
-@media (max-height: 582px) {
+@media only screen and(max-height: 582px) {
   .container {
     margin: 30px auto;
   }

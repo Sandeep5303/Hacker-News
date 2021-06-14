@@ -59,7 +59,7 @@ const HackerState = props => {
         payload: filter,
       });
     } catch (err) {
-      customToast('error', err.response.msg);
+      customToast('error', `${err}`);
     }
   };
 
@@ -74,7 +74,7 @@ const HackerState = props => {
         payload: data.hits,
       });
     } catch (err) {
-      customToast('error', err.response.msg);
+      customToast('error', `${err}`);
     }
   };
 

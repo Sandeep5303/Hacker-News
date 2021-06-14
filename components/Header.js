@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <div className={styles.header}>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <Modal showModal={showModal} />
       <div ref={logoRef} className={styles.logo}>
         <Link href='/'>
           <a>

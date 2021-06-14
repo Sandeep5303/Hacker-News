@@ -18,7 +18,7 @@ export default function NewsItem() {
   const newsItemRef = useRef(null);
   useEffect(() => {
     animationItems(newsItemRef);
-  });
+  }, []);
   return (
     <Layout>
       {loading && <Loader />}

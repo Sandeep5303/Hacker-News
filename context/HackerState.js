@@ -21,7 +21,7 @@ const HackerState = props => {
     searchResults: [],
     term: '',
     loading: false,
-    sLoading: false,
+    sloading: false,
   };
 
   const [state, dispatch] = useReducer(HackerReducer, initialState);

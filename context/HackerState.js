@@ -41,7 +41,7 @@ const HackerState = props => {
       setLoading();
       const res = await fetch(`${API_URL}/items/${id}`);
       const news = await res.json();
-      customToast('success', 'Story successfully loaded');
+      // customToast('success', 'Story successfully loaded');
 
       const filter = {
         id: news.id,

@@ -57,7 +57,7 @@
   display: grid;
   grid-auto-flow: row;
   gap: 0.5rem;
-  margin: 1rem 1rem;
+  margin: 1rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -80,4 +80,31 @@
   grid-auto-flow: column;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .newsBox {
+    display: block;
+    margin: 0.5rem;
+  }
+  .newsBox .bottom {
+    text-align: left;
+    display: grid;
+    gap: 0.2rem;
+    grid-template-areas:
+      'author author date date'
+      'cmts cmts points points';
+  }
+  .author {
+    grid-area: author;
+  }
+  .date {
+    grid-area: date;
+  }
+  .cmts {
+    grid-area: cmts;
+  }
+  .points {
+    grid-area: points;
+  }
 }

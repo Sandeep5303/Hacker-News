@@ -10,6 +10,9 @@ import Link from 'next/link';
 import { useContext } from 'react';
 
 export default function NewsItem() {
+  const createMarkup = () => {
+    return { __html: `${currentNews.text}` };
+  };
   const { loading, currentNews } = useContext(hackerContext);
   return (
     <Layout>
@@ -20,7 +23,9 @@ export default function NewsItem() {
             <div className={styles.top}>
               <h3>{currentNews.title}</h3>
               <small>{currentNews.author}</small>
-              {currentNews.text && <p>{parseHTML(currentNews.text)}</p>}
+              {currentNews.text && (
+                <div dangerouslySetInnerHTML={createMarkup()}></div>
+              )}
             </div>
             <div className={styles.bottom}>
               <small>{formatDate(currentNews.created_at)}</small>

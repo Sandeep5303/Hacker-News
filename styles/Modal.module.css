@@ -13,3 +13,15 @@
   max-width: 960px;
   padding: 0 30px;
 }
+
+@media (max-height: 582px) {
+  .modal {
+    margin: calc(60px + 50px) auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .modal {
+    margin: calc(60px + 50px) auto;
+  }
+}

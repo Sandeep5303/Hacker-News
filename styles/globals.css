@@ -7,6 +7,7 @@
   --text-color: #e9ecf0;
   --box-color: rgba(0, 0, 0, 0.15);
   --box-hover-color: rgba(0, 0, 0, 0.35);
+  --mobile-font-size: 1rem;
 }
 
 * {
@@ -41,7 +42,8 @@ small span {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--text-color);
+  /* background: var(--text-color); */
+  background: transparent;
   border-radius: 10px;
 }
 

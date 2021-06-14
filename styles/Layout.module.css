@@ -3,3 +3,16 @@
   max-width: 960px;
   padding: 0 30px;
 }
+
+@media (max-height: 582px) {
+  .container {
+    margin: 30px auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+}

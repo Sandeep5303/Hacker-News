@@ -1,11 +1,6 @@
 import toast from 'react-hot-toast';
 import moment from 'moment';
 
-// convert html string into text
-export const parseHTML = text => {
-  return text.replace(/(<([^>]+)>)/g, '');
-};
-
 // format date
 export const formatDate = date => {
   return moment(date).startOf('day').fromNow();

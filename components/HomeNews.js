@@ -1,4 +1,6 @@
 import styles from '@styles/HomeNews.module.css';
+import { formatDate } from '@config/helper';
+
 import Link from 'next/link';
 
 export default function HomeNews({ nw }) {
@@ -10,7 +12,7 @@ export default function HomeNews({ nw }) {
           <small>{nw.author}</small>
         </div>
         <div className={styles.bottom}>
-          <small>{nw.created_at}</small>
+          <small>{formatDate(nw.created_at)}</small>
           <small>{nw.num_comments} comments</small>
           <small>
             🤍 <span>{nw.points}</span>

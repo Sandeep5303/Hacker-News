@@ -2,15 +2,18 @@ import Layout from '@components/Layout';
 import HomeNews from '@components/HomeNews';
 import { API_URL } from '@config/index';
 import styles from '@styles/Home.module.css';
-import hackerContext from '@context/hackerContext';
+import { animationItems } from '@config/animation';
 
-import { useContext } from 'react';
+import { useRef, useEffect } from 'react';
 
 export default function Home({ news }) {
-  const { searchResults, addSearchResults } = useContext(hackerContext);
+  const itemsRef = useRef(null);
+  useEffect(() => {
+    animationItems(itemsRef);
+  }, []);
   return (
     <Layout>
-      <div className={styles.newsContainer}>
+      <div ref={itemsRef} className={styles.newsContainer}>
         {news.map(nw => (
           <HomeNews nw={nw} key={nw.objectID} />
         ))}

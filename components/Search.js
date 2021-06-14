@@ -45,10 +45,14 @@ export default function Search() {
                 <h3>{result.title}</h3>
               </div>
               <div className={styles.bottom}>
-                <small>{result.author}</small>
-                <small>{formatDate(result.created_at)}</small>
-                <small>{result.num_comments} comments</small>
-                <small>
+                <small className={styles.author}>{result.author}</small>
+                <small className={styles.date}>
+                  {formatDate(result.created_at)}
+                </small>
+                <small className={styles.cmts}>
+                  {result.num_comments} comments
+                </small>
+                <small className={styles.points}>
                   🤍 <span>{result.points}</span>
                 </small>
               </div>

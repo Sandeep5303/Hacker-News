@@ -6,6 +6,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Design
 
+Designed in ADOBE XD
+
 ![](xd/HackerNews-1.png)
 ![](xd/HackerNews-2.png)
 ![](xd/HackerNews-3.png)

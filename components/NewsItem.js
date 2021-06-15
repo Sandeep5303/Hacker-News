@@ -16,9 +16,10 @@ export default function NewsItem() {
   };
   const { loading, currentNews } = useContext(hackerContext);
   const newsItemRef = useRef(null);
+
   useEffect(() => {
     animationItems(newsItemRef);
-  }, []);
+  }, [loading]);
   return (
     <Layout>
       {loading && <Loader />}
